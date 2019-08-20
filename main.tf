@@ -5,10 +5,10 @@ resource "aws_s3_bucket" "terraform-state-storage-s3" {
     versioning {
         enabled = true
     }
-    lifecycle {
+    lifecycle = {
         prevent_destroy = true
     }
-    tags {
+    tags = {
       Name = "S3 Remote Terraform State Store"
     }
 }
@@ -20,12 +20,12 @@ resource "aws_dynamodb_table" "dynamodb-terraform-state-lock" {
     read_capacity = 20
     write_capacity = 20
 
-    attribute {
+    attribute = {
         name = "LockID"
         type = "S"
     }
 
-    tags {
+    tags = {
     Name = "DynamoDB Terraform State Lock Table"
     }
 } 
