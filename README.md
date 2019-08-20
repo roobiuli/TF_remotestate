@@ -18,7 +18,7 @@ As any other Terraform module this arguments are variables that defaults to spec
 ex: 
 
 ```
-module "" {
+module "git@github.com:roobiuli/TF_remotestate.git" {
     BucketName = "My-S3-Bucket-For-TFState"
     DynamoDBTableName = "TFState-Lock-table"
     Region = "eu-west-1"
@@ -31,7 +31,7 @@ Initilize the module
 terraform init
 ```
 
-Apply
+Applyx  
 
 ```
 terraform apply
